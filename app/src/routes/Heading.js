@@ -1,3 +1,3 @@
 export default function Heading() {
-    return <h1>RELAX &amp; REACT</h1>
+    return <h1 className="text-center">RELAX &amp; REACT</h1>
 }
