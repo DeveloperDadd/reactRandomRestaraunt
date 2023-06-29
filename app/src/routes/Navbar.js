@@ -1,19 +1,19 @@
-import { getData } from "./data";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Navbar () {
     const [category, setCategory] = useState([category]);
 
     const menus = ['Appetizers','Breakfast','Lunch','Dinner','Drinks']
+
+function handleClick() {
+    useEffect(() => {
+        axios.get('https://www.jsonkeeper.com/b/MDXW')
+            .then(res => {
+                setCategory(res.data);
+            })
+    }, []); }
     
-    // useEffect(() => {
-    //     let data = 
-        
-    // }, [])
-    
-    // function handleClick() {
-    //     getData();
-    // }
     return (
     <>
         <nav class="container-sm">
@@ -23,6 +23,11 @@ export default function Navbar () {
                 ))}
             </ul>
         </nav>
+
+        <div className="container-fluid">
+
+
+        </div>
     </>
     )
 }
