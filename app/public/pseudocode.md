@@ -50,6 +50,3 @@
     - Some kind of online ordering system
 - *WONT HAVE*
 
-## WIREFRAME : 
-
-!(Wireframe for Relax & React)[app/public/Restaraunt Wireframe.PNG]
