@@ -50,3 +50,33 @@
     - Some kind of online ordering system
 - *WONT HAVE*
 
+## VARIABLES / COMPONENTS : 
+  1. **HEADING COMPONENT**
+        * React component
+        * Displayed at the top of the page, text is Restaraunt's name
+        * No props or dynamic scripting needed, text stays the same
+  2. **FOOTER COMPONENT**
+        * React component
+        * Display at the bottom of the page, text is restaraunt address and hours of operation
+        * No props or dynamic scripting needed, text will stay the same everyday
+  3. **NAVBAR COMPONENT**
+        * React component
+        * Displayed under heading component
+        * Will have several buttons for menu selection (appetizers, burgers, pasta, etc.) <- ***Array***
+        * Each button will have onClick functionality to display user selection in the main part of the menu ***useState and useEffect (API calls)***
+  4. **MENU COMPONENT**
+        * React component
+        * Menu items dynamically change based on user selection and current state
+
+### ALL OF THE ABOVE WILL BE INSERTED INTO APP.JS WHICH WILL USE REACT.DOM TO RENDER THE ELEMENTS TO INDEX.HTML DOM ###
+
+## FUNCTIONS : 
+  1. **handleClick()**
+       - user CLICKS menu selection button
+       - SET state
+       - FETCH data based on current state
+       - RETURN DATA
+  2. **updateMenu()**
+       - will be inserted into the handleClick function
+       - once data is retrieved from the API, pass the data on to necessary menu items
+       - these can be used a proprs?
