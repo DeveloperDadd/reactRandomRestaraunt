@@ -2,6 +2,7 @@
 
 body {
     background-color: #f5f1b8;
+    font-size: 16px;
 }
 
 h1, h2, h3 {
@@ -9,6 +10,48 @@ h1, h2, h3 {
     color: #ff3737;
 }
 
+h1 {
+    font-size: 4.854em;
+}
+
+h2 {
+    font-size: 3.326em;
+}
+
+h3 {
+    font-size: 1.618em;
+}
+
 p {
     font-family: 'Open Sans', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    margin: 10px;
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+}
+
+button {
+    border-radius: 5px;
+    border: none;
+    color: white;
+    box-shadow: 1px 2px 3px 4px rgba(20,20,20,0.4);
+    background-color: #ff3737;
+}
+
+button:hover {
+    background-color: #ea600c;
 }
