@@ -8,8 +8,10 @@ import './index.css';
 
 export default function App() {
   return (
+    <>
     <Heading />
     <Footer />
+    </>
   )
 }
 
