@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300;400;600&display=swap');
 
+body {
+    background-color: #f5f1b8;
+}
+
 h1, h2, h3 {
     font-family: 'Lobster', cursive;
+    color: #ff3737;
 }
 
 p {
