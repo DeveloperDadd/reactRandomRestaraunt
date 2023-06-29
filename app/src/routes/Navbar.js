@@ -1,6 +1,9 @@
 import { getData } from "./data";
+import { useState, useEffect } from "react";
 
 export default function Navbar () {
+    const [category, setCategory] = useState([category]);
+    
     const menus = ['Appetizers','Breakfast','Lunch','Dinner','Drinks']
     function handleClick() {
         getData();
