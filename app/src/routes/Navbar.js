@@ -1,3 +1,5 @@
+import { getData } from "./data";
+
 export default function Navbar () {
     const menus = ['Appetizers','Breakfast','Lunch','Dinner','Drinks']
     function handleClick() {

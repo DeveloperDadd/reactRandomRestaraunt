@@ -1,6 +1,5 @@
 
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import Heading from './routes/Heading.js';
 import Navbar from './routes/Navbar.js';
 import Menu from './routes/Menu.js';
