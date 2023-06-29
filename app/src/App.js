@@ -9,7 +9,7 @@ import './index.css';
 
 export default function App() {
   return (
-    <div className='container-fluid'>
+    <div className='container-sm'>
     <Heading />
     <Navbar />
     <Menu />

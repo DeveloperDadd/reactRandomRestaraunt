@@ -7,8 +7,8 @@ export default function Navbar () {
     }
     return (
     <>
-        <nav>
-            <ul>
+        <nav class="container-sm">
+            <ul class="container-fluid .d-flex justify-content-center">
                 {menus.map((menu) => (
                     <li key={menu}><button onClick={handleClick}>{menu}</button></li>
                 ))}
