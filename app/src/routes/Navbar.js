@@ -3,11 +3,17 @@ import { useState, useEffect } from "react";
 
 export default function Navbar () {
     const [category, setCategory] = useState([category]);
-    
+
     const menus = ['Appetizers','Breakfast','Lunch','Dinner','Drinks']
-    function handleClick() {
-        getData();
-    }
+    
+    useEffect((
+
+
+    ), [category]);
+    
+    // function handleClick() {
+    //     getData();
+    // }
     return (
     <>
         <nav class="container-sm">
