@@ -1,5 +1,5 @@
 export default function Navbar () {
-    const menus = ['Appetizers','Pasta','Sandwiches','Desserts','Beverages']
+    const menus = ['Appetizers','Breakfast','Lunch','Dinner','Drinks']
     function handleClick() {
         getData();
     }
