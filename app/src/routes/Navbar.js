@@ -6,10 +6,10 @@ export default function Navbar () {
 
     const menus = ['Appetizers','Breakfast','Lunch','Dinner','Drinks']
     
-    useEffect((
-
-
-    ), [category]);
+    // useEffect(() => {
+    //     let data = 
+        
+    // }, [])
     
     // function handleClick() {
     //     getData();

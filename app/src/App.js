@@ -12,7 +12,6 @@ export default function App() {
     <div className='container-sm'>
     <Heading />
     <Navbar />
-    <Menu />
     <Footer />
     </div>
   )
