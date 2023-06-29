@@ -1,8 +1,6 @@
-import { MouseEvent } from "react";
-
 export default function Navbar () {
     const menus = ['Appetizers','Pasta','Sandwiches','Desserts','Beverages']
-    function handleClick(event: MouseEvent) {
+    function handleClick() {
         getData();
     }
     return (
