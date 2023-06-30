@@ -4,8 +4,6 @@ import axios from "axios";
 export default function Navbar () {
     const [menuState, setMenuState] = useState([]);
 
-    const menus = ['Appetizer','Breakfast','Lunch','Dinner','Drink']
-
     useEffect(() => {
         async function getData() {}
         axios.get('https://www.jsonkeeper.com/b/MDXW')
@@ -14,16 +12,12 @@ export default function Navbar () {
             })
     }, []); 
 
-
     const appetizers = menuState.filter((item) => item.category === 'Appetizer');
     const breakfast = menuState.filter((item) => item.category === 'Breakfast');
     const lunch = menuState.filter((item) => item.category === 'Lunch');
     const dinner = menuState.filter((item) => item.category === 'Dinner');
     const drinks = menuState.filter((item) => item.category === 'Drink');
     const menuData = [appetizers, breakfast, lunch, dinner, drinks];
-    //button is clicked at top
-    //setMenu = 
-    //changes menu to whatever button is clicked
 
     function changeApp () {
         setMenuState(appetizers);
