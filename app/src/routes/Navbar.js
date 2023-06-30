@@ -29,7 +29,7 @@ export default function Navbar () {
                     <h3>{item.title}</h3>
                     <h6>{item.description}</h6>
                     <h6>{item.category}</h6>
-                    <h6>{item.price}</h6>
+                    <h6>${item.price}</h6>
                 </div>
              ))}       
 
