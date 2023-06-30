@@ -2,53 +2,61 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Navbar () {
-    const [menuState, setMenuState] = useState([]);
+    const [menu, setMenu] = useState([]);
+    const [appetizers, setAppetizers] = useState([]);
+    const [breakfast, setBreakfast] = useState([])
+    const [lunch, setLunch] = useState([])
+    const [dinner, setDinner] = useState([])
+    const [drinks, setDrinks] = useState([])
+    const [currentMenu, setCurrentMenu] = useState([]);
 
     useEffect(() => {
-        async function getData() {}
-        axios.get('https://www.jsonkeeper.com/b/MDXW')
-            .then(res => {
-                setMenuState(res.data);
-            })
-    }, []); 
+    //async function getData() {
+       axios.get('https://www.jsonkeeper.com/b/MDXW')
+        .then(res => {
+        setMenu(res.data);
+        setCurrentMenu(res.data);
+        })
+    //}         
+}, []); 
+    
+useEffect(() => {
+    setAppetizers(menu.filter((item) => item.category === 'Appetizer'));
+    setBreakfast(menu.filter((item) => item.category === 'Breakfast'));
+    setLunch(menu.filter((item) => item.category === 'Lunch'));
+    setDinner(menu.filter((item) => item.category === 'Dinner'));
+    setDrinks(menu.filter((item) => item.category === 'Drink'));
+    }, [menu]);
 
-    const appetizers = menuState.filter((item) => item.category === 'Appetizer');
-    const breakfast = menuState.filter((item) => item.category === 'Breakfast');
-    const lunch = menuState.filter((item) => item.category === 'Lunch');
-    const dinner = menuState.filter((item) => item.category === 'Dinner');
-    const drinks = menuState.filter((item) => item.category === 'Drink');
-    const menuData = [appetizers, breakfast, lunch, dinner, drinks];
+const menus = ['Appetizers','Breakfast','Lunch','Dinner','Drinks'];
 
-    function changeApp () {
-        setMenuState(appetizers);
+function handleClick(e) {
+    console.log('clicked');
+    if (e.target.id === menus[0]) {
+        setCurrentMenu(appetizers);
+    } else if (e.target.id === menus[1]) {
+        setCurrentMenu(breakfast);
+    } else if (e.target.id === menus[2]) {
+        setCurrentMenu(lunch);
+    } else if (e.target.id === menus[3]) {
+        setCurrentMenu(dinner);
+    } else if (e.target.id === menus[4]) {
+        setCurrentMenu(drinks);
     }
-    function changeBreak () {
-        setMenuState(breakfast);
-    }
-    function changeLunch () {
-        setMenuState(lunch);
-    }
-    function changeDin () {
-        setMenuState(dinner);
-    }
-    function changeDrink () {
-        setMenuState(drinks);
-    }
+}
 
     return (
     <>
-        <nav class="container-sm">
-            <ul class="container-fluid .d-flex justify-content-center">
-                <li><button onClick={changeApp}>Appetizers</button></li>
-                <li><button onClick={changeBreak}>Breakfast</button></li>
-                <li><button onClick={changeLunch}>Lunch</button></li>
-                <li><button onClick={changeDin}>Dinner</button></li>
-                <li><button onClick={changeDrink}>Drinks</button></li>
+        <nav className="container-sm">
+            <ul className="container-fluid .d-flex justify-content-center">
+                {menus.map((item) => {
+                    return <li key={item}><button id={item} onClick={handleClick}>{item}</button></li>
+                })}
             </ul>
         </nav>
 
         <div className="container-fluid text-center">
-             {menuState.map(item => (
+             {currentMenu.map(item => (
                 <div key={item.id}>
                     <h3>{item.title}</h3>
                     <h6>{item.description}</h6>
