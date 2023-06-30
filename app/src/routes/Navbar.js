@@ -14,34 +14,46 @@ export default function Navbar () {
             })
     }, []); 
 
+
     const appetizers = menuState.filter((item) => item.category === 'Appetizer');
     const breakfast = menuState.filter((item) => item.category === 'Breakfast');
     const lunch = menuState.filter((item) => item.category === 'Lunch');
     const dinner = menuState.filter((item) => item.category === 'Dinner');
     const drinks = menuState.filter((item) => item.category === 'Drink');
-
+    const menuData = [appetizers, breakfast, lunch, dinner, drinks];
     //button is clicked at top
     //setMenu = 
     //changes menu to whatever button is clicked
 
-
-    function handleClick(category) {
-        setMenuState(category)
+    function changeApp () {
+        setMenuState(appetizers);
+    }
+    function changeBreak () {
+        setMenuState(breakfast);
+    }
+    function changeLunch () {
+        setMenuState(lunch);
+    }
+    function changeDin () {
+        setMenuState(dinner);
+    }
+    function changeDrink () {
+        setMenuState(drinks);
     }
 
     return (
     <>
         <nav class="container-sm">
             <ul class="container-fluid .d-flex justify-content-center">
-                <li><button onClick={handleClick(appetizers)}>{menus[0]}</button></li>
-                <li><button onClick={handleClick}>{menus[1]}</button></li>
-                <li><button onClick={handleClick}>{menus[2]}</button></li>
-                <li><button onClick={handleClick}>{menus[3]}</button></li>
-                <li><button onClick={handleClick}>{menus[4]}</button></li>
+                <li><button onClick={changeApp}>Appetizers</button></li>
+                <li><button onClick={changeBreak}>Breakfast</button></li>
+                <li><button onClick={changeLunch}>Lunch</button></li>
+                <li><button onClick={changeDin}>Dinner</button></li>
+                <li><button onClick={changeDrink}>Drinks</button></li>
             </ul>
         </nav>
 
-        <div className="container-fluid">
+        <div className="container-fluid text-center">
              {menuState.map(item => (
                 <div key={item.id}>
                     <h3>{item.title}</h3>
