@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import menuData from './menuData.json';
 
 export default function Navbar () {
     const [menu, setMenu] = useState([]);
@@ -9,10 +10,11 @@ export default function Navbar () {
     const [dinner, setDinner] = useState([])
     const [drinks, setDrinks] = useState([])
     const [currentMenu, setCurrentMenu] = useState([]);
+    
 
     useEffect(() => {
     //async function getData() {
-       axios.get('https://www.jsonkeeper.com/b/MDXW')
+       axios.get(menuData)
         .then(res => {
         setMenu(res.data);
         setCurrentMenu(res.data);
