@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import menuData from './menuData.json';
 
 export default function Navbar () {
     const [menu, setMenu] = useState([]);
@@ -13,14 +12,19 @@ export default function Navbar () {
     
 
     useEffect(() => {
-    //async function getData() {
-       axios.get(menuData)
-        .then(res => {
-        setMenu(res.data);
-        setCurrentMenu(res.data);
-        })
-    //}         
-}, []); 
+        async function getData() {
+          try {
+            const res = await axios.get("https://www.jsonkeeper.com/b/MDXW");
+            setMenu(res.data);
+            setCurrentMenu(res.data);
+          } catch (error) {
+            console.error("Error fetching data:", error);
+          }
+        }
+    
+        getData(); // Call the getData function
+    
+      }, []);
     
 useEffect(() => {
     setAppetizers(menu.filter((item) => item.category === 'Appetizer'));
