@@ -14,7 +14,7 @@ export default function Navbar () {
     useEffect(() => {
         async function getData() {
           try {
-            const res = await axios.get("/menuData.json");
+            const res = await axios.get("./menuData.json");
             setMenu(res.data);
             setCurrentMenu(res.data);
           } catch (error) {
